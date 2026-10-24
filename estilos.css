@@ -1,0 +1,255 @@
+
+/* =====================================
+   PORTUGAL À DESCOBERTA
+   Folha de estilos externa
+   ===================================== */
+
+:root {
+    --verde: #173f35;
+    --verde-claro: #eaf1ec;
+    --dourado: #f4c66a;
+    --texto: #29332e;
+    --branco: #ffffff;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 75px;
+}
+
+body {
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    color: var(--texto);
+    line-height: 1.7;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+a {
+    transition: color 0.2s ease;
+}
+
+/* Menu principal */
+.navbar {
+    background-color: var(--verde);
+    padding: 16px 0;
+}
+
+.navbar-brand {
+    letter-spacing: -0.5px;
+}
+
+.nav-link {
+    margin-left: 12px;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: var(--dourado);
+}
+
+/* Imagem e texto de destaque */
+.hero {
+    min-height: 570px;
+    display: flex;
+    align-items: center;
+    color: var(--branco);
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(12, 35, 28, 0.88),
+            rgba(12, 35, 28, 0.25)
+        ),
+        url("Imagens/lisboa.jpg") center 50% / cover no-repeat;
+}
+
+.hero-content {
+    padding-top: 75px;
+    padding-bottom: 75px;
+}
+
+.hero h1 {
+    max-width: 720px;
+    font-size: clamp(2.4rem, 5vw, 4.4rem);
+    margin-bottom: 24px;
+}
+
+.hero-text {
+    max-width: 620px;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.etiqueta {
+    color: #8b6a26;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.hero .etiqueta {
+    color: var(--dourado);
+}
+
+/* Secções */
+.section-padding {
+    padding: 85px 0;
+}
+
+.section-light {
+    background-color: var(--verde-claro);
+}
+
+.section-heading {
+    margin-bottom: 42px;
+}
+
+.section-heading h2 {
+    margin: 12px 0;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+}
+
+/* Cartões de destinos */
+.destination-card {
+    border: 0;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 5px 22px rgba(20, 40, 30, 0.08);
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+.destination-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(20, 40, 30, 0.15);
+}
+
+.destination-card img {
+    height: 205px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.destination-card .card-body {
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.destination-card .card-title {
+    color: var(--verde);
+    font-size: 1.25rem;
+}
+
+.destination-card .card-text {
+    flex-grow: 1;
+    font-size: 0.93rem;
+}
+
+.destination-card .btn {
+    margin-top: 12px;
+}
+
+/* Botões */
+.btn-success {
+    background-color: var(--verde);
+    border-color: var(--verde);
+}
+
+.btn-success:hover,
+.btn-success:focus {
+    background-color: #245b4a;
+    border-color: #245b4a;
+}
+
+.btn-warning {
+    background-color: var(--dourado);
+    border-color: var(--dourado);
+    color: #1f2a22;
+    font-weight: 700;
+}
+
+.btn-warning:hover,
+.btn-warning:focus {
+    background-color: #ffda8d;
+    border-color: #ffda8d;
+    color: #1f2a22;
+}
+
+/* Tabela */
+.table {
+    background-color: var(--branco);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table thead th {
+    padding: 16px;
+}
+
+.table tbody td {
+    padding: 14px 16px;
+}
+
+/* Rodapé */
+.footer {
+    background-color: #102d25;
+    color: var(--branco);
+    padding: 32px 0;
+    font-size: 0.9rem;
+}
+
+.footer a {
+    color: var(--dourado);
+}
+
+.footer a:hover {
+    color: var(--branco);
+}
+
+/* Acessibilidade: respeitar movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
+
+/* Ajustes para telemóveis */
+@media (max-width: 576px) {
+    .hero {
+        min-height: 500px;
+    }
+
+    .hero-content {
+        padding-top: 55px;
+        padding-bottom: 55px;
+    }
+
+    .section-padding {
+        padding: 60px 0;
+    }
+
+    .destination-card img {
+        height: 220px;
+    }
+
+    .nav-link {
+        margin-left: 0;
+        padding: 10px 0;
+    }
+}
